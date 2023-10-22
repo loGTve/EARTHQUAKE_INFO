@@ -10,6 +10,7 @@ declare global {
             REACT_APP_EARTHQUAKE_API: string;
             REACT_APP_EARTHQUAKE_URL: string;
             REACT_APP_EARTHQUAKE_PARMETER_URL: string;
+            REACT_APP_EARTHQUAKE_PARAMETER_DATE: string;
         }
     }
 }
