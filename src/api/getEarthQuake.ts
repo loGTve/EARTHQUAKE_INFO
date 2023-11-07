@@ -1,5 +1,5 @@
 import axios from "axios";
-import {today, pastThreeDay} from "@/types/date";
+import {today, pastDate} from "@/types/date";
 
 export const getEarthQuakeResponse = async () => {
     const apiUrl = process.env.NEXT_PUBLIC_EARTHQUAKE_URL;
@@ -9,7 +9,7 @@ export const getEarthQuakeResponse = async () => {
     
     const getEarthquakeUrl = (
         apiUrl + apiKey
-        + apiParameter + pastThreeDay
+        + apiParameter + pastDate
         + apiParameterDate + today
         );
 
@@ -22,7 +22,6 @@ export const getEarthQuakeResponse = async () => {
     for(let i = 0; i < itemResponse.length; i++){
         eqMarkInfo.push([itemResponse[i].lat, itemResponse[i].lon, itemResponse[i].loc]);
     }
-    console.table(eqMarkInfo);
     
     return eqMarkInfo;
 }
