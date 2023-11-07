@@ -1,11 +1,11 @@
 "use client"
-import {GoogleMapsWrapper} from "@/components/map/mapWrapper";
-import {GoogleMaps} from "@/components/map/mapComponent";
+import {GoogleMapWrapper} from "@/components/map/mapComponents/GoogleMapWrapper";
+import {GoogleMap} from "@/components/map/mapComponents/GoogleMap";
 
 export const MapComponent = () => {
     return(
-        <GoogleMapsWrapper>
-            <GoogleMaps/>
-        </GoogleMapsWrapper>
+        <GoogleMapWrapper>
+            <GoogleMap/>
+        </GoogleMapWrapper>
     )
 }
