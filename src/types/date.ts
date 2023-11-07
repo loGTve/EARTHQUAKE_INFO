@@ -17,7 +17,7 @@ export const today: string = getToday.year + getToday.month + getToday.day;
 
 
 /** 3일전 날짜 받아오기  */
-const getPastThreeDate: Date = new Date(getTodayDate.setDate(getTodayDate.getDate() - 2));
+const getPastThreeDate: Date = new Date(getTodayDate.setDate(getTodayDate.getDate() - 3));
 
 const getPastDate: DateRule = {
     day: getPastThreeDate.getDate().toString().padStart(2, '0'),
@@ -26,4 +26,4 @@ const getPastDate: DateRule = {
 };
 
 /** 3일전 날짜 (yyyy/mm/dd) */
-export const pastThreeDay: string = getPastDate.year + getPastDate.month + getPastDate.day;
+export const pastDate: string = getPastDate.year + getPastDate.month + getPastDate.day;
