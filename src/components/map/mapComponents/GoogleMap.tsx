@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import {mapMark} from "@/components/map/mapMark";
+import { mapMark } from "@/components/map/mapComponents/mapMark";
 
 const DEFAULT_CENTER = { lat: 37.603, lng: 127.094 };
 const DEFAULT_ZOOM = 6;
-const TEST_MARK = {lat: 37.603, lng: 127.094};
 
-export const GoogleMaps = () => {
+export const GoogleMap = () => {
     const ref = useRef<HTMLDivElement | null>(null);
     let map;
     useEffect(() => {
@@ -21,7 +20,6 @@ export const GoogleMaps = () => {
     return (
         <div
             ref={ref}
-            style={{ width: "800px", height: "600px" }}
-        />
+            style={{ width: "800px", height: "600px" }}/>
         );
 };
