@@ -13,16 +13,15 @@ export const GoogleMaps = () => {
              map = new google.maps.Map(ref.current, {
                 center: DEFAULT_CENTER,
                 zoom: DEFAULT_ZOOM,
-                 
             });
-             mapMark(map);
-        }
+              mapMark(map);
+            }
     }, [ref]);
     
     return (
         <div
             ref={ref}
-            style={{ width: "500px", height: "500px" }}
+            style={{ width: "800px", height: "600px" }}
         />
         );
 };

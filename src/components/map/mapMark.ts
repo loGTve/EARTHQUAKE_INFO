@@ -5,7 +5,6 @@ export const mapMark = async (map: any) => {
     console.table(markInfo);
     for(let i = 0; i < markInfo.length; i++){
         const [lat, lng, location] = markInfo[i];
-        console.log ( lat, lng );
         new google.maps.Marker({position: { lat: lat, lng: lng}, map: map})
     }
 }
