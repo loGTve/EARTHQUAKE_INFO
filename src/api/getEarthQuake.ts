@@ -1,5 +1,5 @@
 import axios from "axios";
-import {today, pastDate} from "@/types/date";
+import {today, pastDate} from "@/utils/date";
 
 export const getEarthQuakeResponse = async () => {
     const apiUrl = process.env.NEXT_PUBLIC_EARTHQUAKE_URL;
@@ -14,14 +14,18 @@ export const getEarthQuakeResponse = async () => {
         );
 
     const response = await axios.get(getEarthquakeUrl);
-
-    const itemResponse = response.data.response.body.items.item;
     
-    let eqMarkInfo: [number, number, string][] = [];
+    const isUndefined: string = response.data.response.header.resultMsg;
+    if(isUndefined == "NO_DATA"){
+        console.log("There is No EarthQuake Before 3 Days");
+    } else {
+        
+        const itemResponse = response.data.response.body.items.item;
+        let eqMarkInfo: [number, number, string][] = [];
     
-    for(let i = 0; i < itemResponse.length; i++){
-        eqMarkInfo.push([itemResponse[i].lat, itemResponse[i].lon, itemResponse[i].loc]);
+        for(let i = 0; i < itemResponse.length; i++){
+            eqMarkInfo.push([itemResponse[i].lat, itemResponse[i].lon, itemResponse[i].loc]);
+        }
+        return eqMarkInfo;
     }
-    
-    return eqMarkInfo;
 }

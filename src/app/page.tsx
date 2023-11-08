@@ -1,12 +1,10 @@
 import React from "react";
-import {MapComponent} from "@/components/map/InitMap";
+import {GoogleMap} from "@/components/map/GoogleMap";
 
 export default function Home() {
   return(
     <div>
-      <div>
-        <MapComponent/>
-      </div>
+        <GoogleMap/>
     </div>
   );
 }
