@@ -1,6 +1,7 @@
-import {getEarthQuakeResponse} from '@/api/getEarthQuake';
-export const mapMark = async (map: any) => {
-    const markInfo = await getEarthQuakeResponse();
+import {GetEarthQuakeResponse} from '@/api/getEarthQuake';
+
+export const MapMark = async (map: any) => {
+    const markInfo = await GetEarthQuakeResponse();
     
     if(markInfo == undefined){
         return null;

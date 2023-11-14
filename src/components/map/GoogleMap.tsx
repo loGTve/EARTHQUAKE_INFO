@@ -1,12 +1,14 @@
 "use client"
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Wrapper } from "@googlemaps/react-wrapper";
-import { mapMark } from '@/components/map/mapComponents/mapMark';
+import { MapMark } from '@/components/map/mapComponents/mapMark';
+import {GetEarthQuakeResponse} from '@/api/getEarthQuake';
 
 const DEFAULT_CENTER = { lat: 37.603, lng: 127.094 };
 const DEFAULT_ZOOM = 6;
 
 const InitMap = () => {
+    
     const ref = useRef<HTMLDivElement | null>(null);
     let map;
     
@@ -16,7 +18,7 @@ const InitMap = () => {
                 center: DEFAULT_CENTER,
                 zoom: DEFAULT_ZOOM,
             });
-              mapMark(map);
+              MapMark(map);
             }
     }, [ref]);
     
